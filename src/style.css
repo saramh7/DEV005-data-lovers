@@ -1,0 +1,35 @@
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+#buscar {
+  width: 300px;
+  height: 20px;
+  margin: 20px 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button-buscar {
+  text-align: center;
+  margin: 20px 0;
+}
+ {
+  text-align: center;
+}
+#port3 {
+  width: 200px;
+}
+#port4 {
+  width: 200px;
+}
+#port5 {
+  width: 200px;
+}

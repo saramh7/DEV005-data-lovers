@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-box">
+      <h1>Harry Potter</h1>
+    </div>
+  </header>
+  <main>
+    <input type="text" id="inputBuscar" class="input-buscar"></input>
+    <input type="button" id="btnBuscar" class="btn-buscar" value="Buscar"></input>
+    <ul id="books" class="books">
+      <li id="book" class="book">
+        <label id="bookTitle">Portada 1</label>
+        <img src="imagen/portada 3.jpeg" id="bookImage">
+        <label id="bookReleaseDay">fecha</label>
+        <label id="bookAuthor">autor</label>
+        <label id="bookDescription">description</label>
+      </li>
+    </ul>
+    <input type="text" id="inputOrdenar" class="input-ordenar">Ordenar</input>
+    <input type="button" id="btnfiltrar" class="btn-filtrar">Filtrar</input>
+  </main>
+  <footer>
+    <p>Copyright 2023</p>
+
+  </footer>
+</body>
+</script>
+
 </html>
