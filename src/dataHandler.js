@@ -6,7 +6,7 @@ export const buscar = () => {
 };
 
 export const filtrar = () => {
-  return 'OMG';
+  return 'OMG1';
 };
 
 export const ordenar = () => {
