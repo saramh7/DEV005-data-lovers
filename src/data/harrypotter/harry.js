@@ -16170,6 +16170,7 @@ export default {
   books: [
     {
       "id": 1,
+      "image": "1-piedra-filosofal.jpg",
       "title": "Harry Potter and the Sorcerer's Stone",
       "releaseDay": "June 26, 1997",
       "author": "J. K. Rowling",
@@ -16177,6 +16178,7 @@ export default {
     },
     {
       "id": 2,
+      "image": "2-camara-secreta.jpg",
       "title": "Harry Potter and the chamber of secrets",
       "releaseDay": "July 2, 1998",
       "author": "J. K. Rowling",
@@ -16184,6 +16186,7 @@ export default {
     },
     {
       "id": 3,
+      "image": "3-prisionero-azkaban.jpg",
       "title": "Harry Potter and the Prisoner of Azkaban",
       "releseDay": "July 8, 1999",
       "author": "J. K. Rowling",
@@ -16191,6 +16194,7 @@ export default {
     },
     {
       "id": 4,
+      "image": "4-caliz-fuego.jpg",
       "title": "Harry Potter and the Goblet of Fire",
       "releaseDay": "July 8, 2000",
       "author": "J. K. Rowling",
@@ -16198,6 +16202,7 @@ export default {
     },
     {
       "id": 5,
+      "image": "5-orden-fenix.jpeg",
       "title": "Harry Potter and the Order of the Phoenix",
       "releaseDay": "June 21, 2003",
       "author": "J. K. Rowling",
@@ -16205,6 +16210,7 @@ export default {
     },
     {
       "id": 6,
+      "image": "6-misterio-del-principe.jpeg",
       "title": "Harry Potter and the Half-Blood Prince",
       "releaseDay": "July 16, 2005",
       "author": "J. K. Rowling",
@@ -16212,6 +16218,7 @@ export default {
     },
     {
       "id": 7,
+      "image": "7-reliquias-muerte.jpg",
       "title": "Harry Potter and the Deathly Hallows",
       "releaseDay": "July 21, 2007",
       "author": "J. K. Rowling",
@@ -16219,6 +16226,7 @@ export default {
     },
     {
       "id": 8,
+      "image": "8-legado-maldito.jpeg",
       "title": "Harry Potter and the Cursed Child",
       "releaseDay": "July 30, 2016",
       "author": "J. K. Rowling",

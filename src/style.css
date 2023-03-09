@@ -1,7 +1,36 @@
-h1 {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
   font-family: "Times New Roman", Times, serif;
-  text-align: center;
-  padding: 2rem;
+}
+.header-box {
+  width: 50%;
+  max-width: 500px;
+  margin: auto;
+}
+.contenedor {
+  width: 50%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.books {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-title {
+  font-size: 50px;
+}
+
+.book-image {
+  width: 10rem;
+  object-fit: cover;
 }
 
 #buscar {
@@ -16,7 +45,6 @@ h1 {
   justify-content: center;
   flex-direction: column;
 }
-
 
 .button-buscar {
   text-align: center;
