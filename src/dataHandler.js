@@ -9,6 +9,34 @@ export const filtrar = () => {
   return 'OMG1';
 };
 
-export const ordenar = () => {
-  return 'OMG';
+export const ordenar = (tipo) => {
+  const libros = data.books;
+
+  if (tipo === "a-z")
+    return libros.sort((a, b) => {
+      const nameA = a.title.toUpperCase();
+      const nameB = b.title.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
+    });
+
+  if (tipo === "z-a")
+    return libros.sort((a, b) => {
+      const nameA = a.title.toUpperCase();
+      const nameB = b.title.toUpperCase();
+      if (nameA < nameB) {
+        return 1;
+      }
+      if (nameA > nameB) {
+        return -1;
+      }
+      // names must be equal
+      return 0;
+    });
 };
