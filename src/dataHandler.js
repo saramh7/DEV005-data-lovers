@@ -5,9 +5,11 @@ export const buscar = () => {
   return data.books;
 };
 
-export const filtrar = () => {
-  return 'OMG1';
-};
+export const filtrar = (name) => {
+  const traerPersonaje = data.characters.toLoWerCase;
+
+ 
+}
 
 export const ordenar = (tipo) => {
   const libros = data.books;
