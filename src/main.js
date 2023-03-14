@@ -5,6 +5,11 @@ const btnBuscar = document.getElementById("btnBuscar")
 const booksContainer = document.getElementById("booksContainer")
 const btnOrdenarAscendente = document.getElementById("btnOrdenar1")
 const btnOrdenarDescendente = document.getElementById("btnOrdenar2")
+const btnFiltrar = document.querySelector('#btnFiltrar')
+const charactersContainer = document.getElementById("charactersContaine")
+
+
+
 // const btnOrdenar = document.getElementsById("ordenar")
 // const books = document.getElementsByName("books")
 
@@ -12,6 +17,7 @@ const btnOrdenarDescendente = document.getElementById("btnOrdenar2")
 btnBuscar.addEventListener('click', buscarInfo)
 btnOrdenarAscendente.addEventListener('click', ordenarPorTituloAscedente)
 btnOrdenarDescendente.addEventListener('click', ordenarPorTituloDescedente)
+btnFiltrar.addEventListener('click',filtrarPersj)
 // btnFiltrar.addEventListener('click',)
 // btnOrdenar.addEventListener('click',)
 
@@ -34,6 +40,56 @@ function ordenarPorTituloDescedente() {
 
   insertarLibros(resultado)
 
+}  function filtrarPersj(){
+  const resultado= filtrar
+  filtrarPersonaje(resultado)
+}
+
+function filtrarPersonaje(BuscarPersonajes){
+  charactersContainer.removeChild(document.getElementById("characters"))
+
+  const filtrar= document.createElement("div")
+  filtrar.setAttribute("id", "characters");
+  filtrar.setAttribute("class","characters");
+  charactersContainer.appendChild(filtrar)
+
+  BuscarPersonajes.forEach(filtrar=> {
+    const characteres= document.createElement("div")
+    characteres.setAttribute("id","character"+filtrar.id)
+    filtrar.appendChild(characteres)
+
+    const name= document.createElement("label")
+    name.setAttribute("id", "characters"+filtrar.name.value);
+    name.setAttribute("class","characters");
+    charactersContainer.appendChild(name)
+
+    const birth= document.createElement("label")
+    birth.setAttribute("id", "characters"+filtrar.birth.value);
+    birth.setAttribute("class","characters");
+    charactersContainer.appendChild(birth)
+
+    const species = document.createElement("label")
+    species.setAttribute("id", "characters"+filtrar.species.value);
+    species.setAttribute("class","characters");
+    charactersContainer.appendChild(species)
+ 
+    const gender = document.createElement("label")
+    gender.setAttribute("id", "characters"+filtrar.gender.value);
+    gender.setAttribute("class","characters");
+    charactersContainer.appendChild(gender)
+ 
+    const house = document.createElement("label")
+    house.setAttribute("id", "characters"+filtrar.house.value);
+    house.setAttribute("class","characters");
+    charactersContainer.appendChild(house)
+
+    const associated_groups = document.createElement("label")
+    associated_groups.setAttribute("id", "characters"+filtrar.associated_groups.value);
+    associated_groups.setAttribute("class","characters");
+    charactersContainer.appendChild(associated_groups)
+
+
+  });
 }
 
 function insertarLibros(librosAInsertar) {
