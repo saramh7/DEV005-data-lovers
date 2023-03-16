@@ -28,8 +28,13 @@
           <input type="button" id="btnBuscar" class="btn-buscar" value="Buscar"></input>
         </div>
         <div class="filtrar">
-          <input type="text" id="inputFiltrar" class="input-filtrar"></input>
-          <input type="button" id="btnFiltrar" class="btn-filtrar" value="Filtrar"></input>
+          <label for="filterSelect">Filtrar por edad recomendada:</label>
+          <select name="filterSelect" id="filterSelect">
+            <option value=""> -Seleccione una opción</option>
+            <option value="7-9 years">7 a 9 años</option>
+            <option value="10-11 years">10 a 11 años</option>
+            <option value="12+ years">12 años en adelante</option>
+          </select>
         </div>
         <div class="ordenar">
           <label for="sortTitle">Ordenar:</label>
@@ -45,6 +50,7 @@
         <div id="books" class="books">
           <div class="book-initial-load" id="bookInitialLoad">
             <img src="imagen/1-piedra-filosofal.jpg" alt="foto piedra filosofal" id="1" class="character-image">
+
             <img src="imagen/2-camara-secreta.jpg" alt="foto camara secreta" id="2" class="character-image">
             <img src="imagen/3-prisionero-azkaban.jpg" alt="foto prisionera ask" id="3" class="character-image">
             <img src="imagen/4-caliz-fuego.jpg" alt="foto caliz del fuego" id="4" class="character-image">
@@ -55,7 +61,10 @@
           </div>
           <div id="book">
             <div id="cover"></div>
-            <div id="backCover"></div>
+            <div id="backCover">
+
+            </div>
+
           </div>
         </div>
       </div>

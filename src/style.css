@@ -12,10 +12,13 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fcf5e1;
 }
 
 body {
-  background-color: rgb(241, 241, 235);
+  color: #4a2b10;
+  background-color: #fcf5e7;
+
   font-family: "Playfair Display", serif;
   font-family: "Raleway", sans-serif;
 }
@@ -47,6 +50,7 @@ body {
 
 .btn-buscar {
   text-align: center;
+  color: #4a2b10;
 }
 
 .book-container {

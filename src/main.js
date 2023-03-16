@@ -4,12 +4,12 @@ import { buscar, ordenar, filtrar } from "./dataHandler.js"
 const btnBuscar = document.getElementById("btnBuscar")
 const booksContainer = document.getElementById("booksContainer")
 const sortTitle = document.getElementById("sortTitle")
-const btnFiltrar = document.querySelector('#btnFiltrar')
+const filterSelect = document.getElementById("filterSelect")
 
 //Eventos del DOM
 btnBuscar.addEventListener('click', buscarInfo)
 sortTitle.addEventListener('change', ordenarPorTitulo)
-btnFiltrar.addEventListener('click', filtrarPersonaje)
+filterSelect.addEventListener('change', filtrarPorEdad)
 // btnFiltrar.addEventListener('click',)
 // btnOrdenar.addEventListener('click',)
 
@@ -21,8 +21,7 @@ function buscarInfo() {
 }
 
 function ordenarPorTitulo(event) {
-  const valorSeleccionado = event.target.value;
-
+  const valorSeleccionado = event.target.value;// rescata el valor que selecciona el usuario en el select
   if (valorSeleccionado === "") return
 
   let resultado;
@@ -35,9 +34,16 @@ function ordenarPorTitulo(event) {
 
 }
 
-function filtrarPersonaje() {
-  const resultado = filtrar
-  insertarPersonajes(resultado)
+function filtrarPorEdad(event) {
+  const valorSeleccionado = event.target.value;
+  if (valorSeleccionado === "") {
+    const datosIniciales = buscar();
+    insertarLibros(datosIniciales)
+    return
+  } else {
+    const resultado = filtrar(valorSeleccionado)// la variable resultado, guarda el retorno de la funcion filtrar.
+    insertarLibros(resultado)
+  }
 }
 
 function insertarPersonajes(BuscarPersonajes) {

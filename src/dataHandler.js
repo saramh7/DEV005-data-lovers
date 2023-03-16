@@ -7,8 +7,8 @@ export const buscar = () => {
 
 
 
-export const filtrar = (name) => {
-  const traerPersonaje = data.characters.toLoWerCase;
+export const filtrar = (valorSeleccionado) => {
+  return data.books.filter((libro) => { return libro.ageRecommended === valorSeleccionado }) //funcion callback    
 
 }
 
