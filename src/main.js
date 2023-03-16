@@ -9,7 +9,6 @@ const btnFiltrar = document.querySelector('#btnFiltrar')
 const charactersContainer = document.getElementById("charactersContaine")
 
 
-
 // const btnOrdenar = document.getElementsById("ordenar")
 // const books = document.getElementsByName("books")
 
@@ -47,7 +46,7 @@ function ordenarPorTituloDescedente() {
 
 function filtrarPersonaje(BuscarPersonajes){
   charactersContainer.removeChild(document.getElementById("characters"))
-
+  
   const filtrar= document.createElement("div")
   filtrar.setAttribute("id", "characters");
   filtrar.setAttribute("class","characters");
@@ -57,7 +56,7 @@ function filtrarPersonaje(BuscarPersonajes){
     const characteres= document.createElement("div")
     characteres.setAttribute("id","character"+filtrar.id)
     filtrar.appendChild(characteres)
-
+  
     const name= document.createElement("label")
     name.setAttribute("id", "characters"+filtrar.name.value);
     name.setAttribute("class","characters");
@@ -87,7 +86,7 @@ function filtrarPersonaje(BuscarPersonajes){
     associated_groups.setAttribute("id", "characters"+filtrar.associated_groups.value);
     associated_groups.setAttribute("class","characters");
     charactersContainer.appendChild(associated_groups)
-
+    
 
   });
 }

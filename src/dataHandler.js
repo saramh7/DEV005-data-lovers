@@ -4,11 +4,29 @@ import data from './data/harrypotter/harry.js';
 export const buscar = () => {
   return data.books;
 };
+const encontrar = document.getElementById("encontrar")
+const  characters = document.getElementById("characters")
+export const filtrar = ( ) => {
 
-export const filtrar = (name) => {
-  const traerPersonaje = data.characters.toLoWerCase;
 
- 
+
+  
+  encontrar.innerHTML= '';
+
+  const traerPersonaje = data.characters.toLoWerCase();
+  for(let name of characters){
+    let name = characters.name.toLoWerCase();
+    if (name.indexOf(traerPersonaje) !== -1 ){
+      encontrar.innerHTML += `
+     <li>${traerPersonaje.name} - valor ${traerPersonaje.value}</li>
+     `
+    }
+  }
+  if(encontrar.innerHTML === ''){
+    encontrar.innerHTML += `
+     <li>${traerPersonaje.name} </li>
+     `
+  }
 }
 
 export const ordenar = (tipo) => {
