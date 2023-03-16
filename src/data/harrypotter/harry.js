@@ -16175,6 +16175,7 @@ export default {
       "releaseDay": "June 26, 1997",
       "releaseYear": 1997,
       "author": "J. K. Rowling",
+      "ageRecommended": "7-9 years",
       "description": "On his birthday, Harry Potter discovers that he is the son of two well-known wizards, from whom he has inherited magical powers. He must attend a famous school of magic and sorcery, where he establishes a friendship with two young men who will become his companions on his adventure. During his first year at Hogwarts, he discovers that a malevolent and powerful wizard named Voldemort is in search of a philosopher's stone that prolongs the life of its owner."
     },
     {
@@ -16184,6 +16185,7 @@ export default {
       "releaseDay": "July 2, 1998",
       "releaseYear": 1998,
       "author": "J. K. Rowling",
+      "ageRecommended": "7-9 years",
       "description": "Harry Potter and the sophomores investigate a malevolent threat to their Hogwarts classmates, a menacing beast that hides within the castle."
     },
     {
@@ -16193,6 +16195,7 @@ export default {
       "releaseDay": "July 8, 1999",
       "releaseYear": 1999,
       "author": "J. K. Rowling",
+      "ageRecommended": "7-9 years",
       "description": "Harry's third year of studies at Hogwarts is threatened by Sirius Black's escape from Azkaban prison. Apparently, it is a dangerous wizard who was an accomplice of Lord Voldemort and who will try to take revenge on Harry Potter."
     },
     {
@@ -16202,6 +16205,7 @@ export default {
       "releaseDay": "July 8, 2000",
       "releaseYear": 2000,
       "author": "J. K. Rowling",
+      "ageRecommended": "10-11 years",
       "description": "Hogwarts prepares for the Triwizard Tournament, in which three schools of wizardry will compete. To everyone's surprise, Harry Potter is chosen to participate in the competition, in which he must fight dragons, enter the water and face his greatest fears."
     },
     {
@@ -16211,6 +16215,7 @@ export default {
       "releaseDay": "June 21, 2003",
       "releaseYear": 2003,
       "author": "J. K. Rowling",
+      "ageRecommended": "10-11 years",
       "description": "In his fifth year at Hogwarts, Harry discovers that many members of the wizarding community do not know the truth about his encounter with Lord Voldemort. Cornelius Fudge, Minister of Magic, appoints Dolores Umbridge as Defense Against the Dark Arts teacher because he believes that Professor Dumbledore plans to take over her job. But his teachings are inadequate, so Harry prepares the students to defend the school against evil."
     },
     {
@@ -16220,6 +16225,7 @@ export default {
       "releaseDay": "July 16, 2005",
       "releaseYear": 2005,
       "author": "J. K. Rowling",
+      "ageRecommended": "10-11 years",
       "description": "Harry discovers a powerful book and, while trying to discover its origins, collaborates with Dumbledore in the search for a series of magical objects that will aid in the destruction of Lord Voldemort."
     },
     {
@@ -16229,6 +16235,7 @@ export default {
       "releaseDay": "July 21, 2007",
       "releaseYear": 2007,
       "author": "J. K. Rowling",
+      "ageRecommended": "12+ years",
       "description": "Harry, Ron and Hermione go on a dangerous mission to locate and destroy the secret of Voldemort's immortality and destruction - the Horcruces. Alone, without the guidance of their teachers or the protection of Professor Dumbledore, the three friends must lean on each other more than ever. But there are Dark Forces in between that threaten to tear them apart. Harry Potter is getting closer and closer to the task for which he has been preparing since the first day he set foot in Hogwarts: the last battle with Voldemort."
     },
     {
@@ -16238,6 +16245,7 @@ export default {
       "releaseDay": "July 30, 2016",
       "releaseYear": 2016,
       "author": "J. K. Rowling",
+      "ageRecommended": "12+ years",
       "description": "Harry's second son entered Hogwarts, but in Slytherin. His relationship with Harry is getting worse and he became close friends with Draco's son, Scorpius Malfoy who is said to be Lord Voldemort's son."
     }
   ]

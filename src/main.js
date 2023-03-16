@@ -3,21 +3,13 @@ import { buscar, ordenar, filtrar } from "./dataHandler.js"
 //Elementos DOM en variable
 const btnBuscar = document.getElementById("btnBuscar")
 const booksContainer = document.getElementById("booksContainer")
-const btnOrdenarAscendente = document.getElementById("btnOrdenar1")
-const btnOrdenarDescendente = document.getElementById("btnOrdenar2")
-const btnFiltrar = document.querySelector('#btnFiltrar')
-const charactersContainer = document.getElementById("charactersContaine")
-
-
-
-// const btnOrdenar = document.getElementsById("ordenar")
-// const books = document.getElementsByName("books")
+const sortTitle = document.getElementById("sortTitle")
+const filterSelect = document.getElementById("filterSelect")
 
 //Eventos del DOM
 btnBuscar.addEventListener('click', buscarInfo)
-btnOrdenarAscendente.addEventListener('click', ordenarPorTituloAscedente)
-btnOrdenarDescendente.addEventListener('click', ordenarPorTituloDescedente)
-btnFiltrar.addEventListener('click',filtrarPersj)
+sortTitle.addEventListener('change', ordenarPorTitulo)
+filterSelect.addEventListener('change', filtrarPorEdad)
 // btnFiltrar.addEventListener('click',)
 // btnOrdenar.addEventListener('click',)
 
@@ -28,67 +20,74 @@ function buscarInfo() {
   insertarLibros(resultado)
 }
 
-function ordenarPorTituloAscedente() {
-  const resultado = ordenar("a-z")
+function ordenarPorTitulo(event) {
+  const valorSeleccionado = event.target.value;// rescata el valor que selecciona el usuario en el select
+  if (valorSeleccionado === "") return
+
+  let resultado;
+  if (valorSeleccionado === "A-Z")
+    resultado = ordenar("a-z")
+  else
+    resultado = ordenar("z-a")
 
   insertarLibros(resultado)
 
 }
 
-function ordenarPorTituloDescedente() {
-  const resultado = ordenar("z-a")
-
-  insertarLibros(resultado)
-
-}  function filtrarPersj(){
-  const resultado= filtrar
-  filtrarPersonaje(resultado)
+function filtrarPorEdad(event) {
+  const valorSeleccionado = event.target.value;
+  if (valorSeleccionado === "") {
+    const datosIniciales = buscar();
+    insertarLibros(datosIniciales)
+    return
+  } else {
+    const resultado = filtrar(valorSeleccionado)// la variable resultado, guarda el retorno de la funcion filtrar.
+    insertarLibros(resultado)
+  }
 }
 
-function filtrarPersonaje(BuscarPersonajes){
+function insertarPersonajes(BuscarPersonajes) {
   charactersContainer.removeChild(document.getElementById("characters"))
 
-  const filtrar= document.createElement("div")
+  const filtrar = document.createElement("div")
   filtrar.setAttribute("id", "characters");
-  filtrar.setAttribute("class","characters");
+  filtrar.setAttribute("class", "characters");
   charactersContainer.appendChild(filtrar)
 
-  BuscarPersonajes.forEach(filtrar=> {
-    const characteres= document.createElement("div")
-    characteres.setAttribute("id","character"+filtrar.id)
+  BuscarPersonajes.forEach(filtrar => {
+    const characteres = document.createElement("div")
+    characteres.setAttribute("id", "character" + filtrar.id)
     filtrar.appendChild(characteres)
 
-    const name= document.createElement("label")
-    name.setAttribute("id", "characters"+filtrar.name.value);
-    name.setAttribute("class","characters");
+    const name = document.createElement("label")
+    name.setAttribute("id", "characters" + filtrar.name.value);
+    name.setAttribute("class", "characters");
     charactersContainer.appendChild(name)
 
-    const birth= document.createElement("label")
-    birth.setAttribute("id", "characters"+filtrar.birth.value);
-    birth.setAttribute("class","characters");
+    const birth = document.createElement("label")
+    birth.setAttribute("id", "characters" + filtrar.birth.value);
+    birth.setAttribute("class", "characters");
     charactersContainer.appendChild(birth)
 
     const species = document.createElement("label")
-    species.setAttribute("id", "characters"+filtrar.species.value);
-    species.setAttribute("class","characters");
+    species.setAttribute("id", "characters" + filtrar.species.value);
+    species.setAttribute("class", "characters");
     charactersContainer.appendChild(species)
- 
+
     const gender = document.createElement("label")
-    gender.setAttribute("id", "characters"+filtrar.gender.value);
-    gender.setAttribute("class","characters");
+    gender.setAttribute("id", "characters" + filtrar.gender.value);
+    gender.setAttribute("class", "characters");
     charactersContainer.appendChild(gender)
- 
+
     const house = document.createElement("label")
-    house.setAttribute("id", "characters"+filtrar.house.value);
-    house.setAttribute("class","characters");
+    house.setAttribute("id", "characters" + filtrar.house.value);
+    house.setAttribute("class", "characters");
     charactersContainer.appendChild(house)
 
     const associated_groups = document.createElement("label")
-    associated_groups.setAttribute("id", "characters"+filtrar.associated_groups.value);
-    associated_groups.setAttribute("class","characters");
+    associated_groups.setAttribute("id", "characters" + filtrar.associated_groups.value);
+    associated_groups.setAttribute("class", "characters");
     charactersContainer.appendChild(associated_groups)
-
-
   });
 }
 
@@ -111,20 +110,20 @@ function insertarLibros(librosAInsertar) {
     cover.setAttribute("class", "cover");
     libro.appendChild(cover)
 
-    const titulo = document.createElement("label");
-    titulo.setAttribute("id", "bookTitle" + book.id);
-    titulo.setAttribute("class", "book-title");
-    titulo.appendChild(document.createTextNode(book.title))
-    cover.appendChild(titulo)
-
     const imagen = document.createElement("img");
     imagen.setAttribute("src", "imagen/" + book.image);
     imagen.setAttribute("class", "book-image");
     cover.appendChild(imagen)
 
+    const titulo = document.createElement("h3");
+    titulo.setAttribute("id", "bookTitle" + book.id);
+    titulo.setAttribute("class", "book-title");
+    titulo.appendChild(document.createTextNode(book.title))
+    cover.appendChild(titulo)
+
     const backCover = document.createElement("div");
     backCover.setAttribute("id", "backCover" + book.id);
-    backCover.setAttribute("class", "backCover");
+    backCover.setAttribute("class", "back-cover");
     libro.appendChild(backCover)
 
     const fecha = document.createElement("label");

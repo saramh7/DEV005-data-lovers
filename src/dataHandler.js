@@ -1,14 +1,15 @@
 import data from './data/harrypotter/harry.js';
-// estas funciones son de ejemplo
+
 
 export const buscar = () => {
   return data.books;
 };
 
-export const filtrar = (name) => {
-  const traerPersonaje = data.characters.toLoWerCase;
 
- 
+
+export const filtrar = (valorSeleccionado) => {
+  return data.books.filter((libro) => { return libro.ageRecommended === valorSeleccionado }) //funcion callback    
+
 }
 
 export const ordenar = (tipo) => {
@@ -24,7 +25,7 @@ export const ordenar = (tipo) => {
       if (nameA > nameB) {
         return 1;
       }
-      // names must be equal
+
       return 0;
     });
 
@@ -38,7 +39,7 @@ export const ordenar = (tipo) => {
       if (nameA > nameB) {
         return -1;
       }
-      // names must be equal
+
       return 0;
     });
 };

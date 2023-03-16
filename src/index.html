@@ -6,64 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@300;400;700&display=swap"
+    rel="stylesheet">
   <script src="main.js" type="module"></script>
 </head>
 
 <body>
   <header>
     <div class="header-box">
-      <h1><img src="imagen/portada-logo.png" ></h1>
+      <img src="imagen/portada-logo.png" class="header-image">
     </div>
   </header>
   <main>
-   
     <div class="contenedor">
-      <input type="text" id="inputBuscar" class="input-buscar"></input>
-      <input type="button" id="btnBuscar" class="btn-buscar" value="Buscar"></input>
-      <div id="booksContainer">
+      <nav class="nav">
+        <div class="buscar">
+          <input type="text" id="inputBuscar" class="input-buscar"></input>
+          <input type="button" id="btnBuscar" class="btn-buscar" value="Buscar"></input>
+        </div>
+        <div class="filtrar">
+          <label for="filterSelect">Filtrar por edad recomendada:</label>
+          <select name="filterSelect" id="filterSelect">
+            <option value=""> -Seleccione una opción</option>
+            <option value="7-9 years">7 a 9 años</option>
+            <option value="10-11 years">10 a 11 años</option>
+            <option value="12+ years">12 años en adelante</option>
+          </select>
+        </div>
+        <div class="ordenar">
+          <label for="sortTitle">Ordenar:</label>
+          <select name="sortTitle" id="sortTitle">
+            <option value=""> -Seleccione una opción</option>
+            <option value="A-Z">Por título Ascendente</option>
+            <option value="Z-A">Por título Descendente</option>
+          </select>
+        </div>
+      </nav>
+
+      <div id="booksContainer" class="book-container">
         <div id="books" class="books">
+          <div class="book-initial-load" id="bookInitialLoad">
+            <img src="imagen/1-piedra-filosofal.jpg" alt="foto piedra filosofal" id="1" class="character-image">
+
+            <img src="imagen/2-camara-secreta.jpg" alt="foto camara secreta" id="2" class="character-image">
+            <img src="imagen/3-prisionero-azkaban.jpg" alt="foto prisionera ask" id="3" class="character-image">
+            <img src="imagen/4-caliz-fuego.jpg" alt="foto caliz del fuego" id="4" class="character-image">
+            <img src="imagen/5-orden-fenix.jpeg" alt="foto fenix" id="5" class="character-image">
+            <img src="imagen/6-misterio-del-principe.jpeg" alt="foto mist. principe" id="6" class="character-image">
+            <img src="imagen/7-reliquias-muerte.jpg" alt="foto reliquias de la muerte" id="7" class="character-image">
+            <img src="imagen/8-legado-maldito.jpeg" alt="foto legado maldito" id="8" class="character-image">
+          </div>
           <div id="book">
             <div id="cover"></div>
-            <div id="backCover"></div>
-            
-            <div id="charactersContainer">
-              <div id="characters" class="characters">
-              <div id="chararter">
-              </div>
-              <div class="btn-filtrar">
-                <input type="text" class="personajes" ></input>
-                <button id="btnFiltrar" class="btn-filtrar" value="Filtrar">Filtrar</button>
+            <div id="backCover">
 
-              </div>
-              <input type="button" id="btnOrdenar1" class="btn-ordenar" value="Ordenar por titulo A-Z"></input>
-              <input type="button" id="btnOrdenar2" class="btn-ordenar" value="Ordenar por titulo Z-A"></input>
-                </div>
-         
-                <div class="contenedorImagen" id="contenedorImagen">
-                  <img src="\imagen\1-piedra-filosofal.jpg" style="width: 300px;" alt="foto piedra filosofal" id="1"
-                  class="piedra">
-                  <img src="\imagen\2-camara-secreta.jpg" style="width: 300px;" alt="foto camara secreta"
-                  id="2" class="camara">
-                  <img src="\imagen\3-prisionero-azkaban.jpg" style="width: 300px;" alt="foto prisionera ask"
-                  id="3" class="prisionero">
-                  <img src="\imagen\4-caliz-fuego.jpg" style="width: 300px;" alt="foto caliz del fuego"
-                  id="4" class="caliz">
-                  <img src="\imagen\5-orden-fenix.jpeg" style="width: 300px;" alt="foto fenix"
-                  id="5" class="fenix">
-                  <img src="\imagen\6-misterio-del-principe.jpeg" style="width: 300px;" alt="foto mist. principe"
-                  id="6" class="misterio">
-                  <img src="\imagen\7-reliquias-muerte.jpg" style="width: 300px;" alt="foto reliquias de la muerte"
-                  id="7" class="reliquias">
-                  <img src="\imagen\8-legado-maldito.jpeg" style="width: 300px;" alt="foto legado maldito"
-                  id="8" class="8-legado">
-                  </div>
-                 
-                
-              </div> 
-           </div>
+            </div>
+
           </div>
         </div>
-    
+      </div>
     </div>
   </main>
   <footer>
