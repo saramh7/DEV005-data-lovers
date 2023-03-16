@@ -1,32 +1,15 @@
 import data from './data/harrypotter/harry.js';
-// estas funciones son de ejemplo
+
 
 export const buscar = () => {
   return data.books;
 };
-const encontrar = document.getElementById("encontrar")
-const  characters = document.getElementById("characters")
-export const filtrar = ( ) => {
 
 
 
-  
-  encontrar.innerHTML= '';
+export const filtrar = (valorSeleccionado) => {
+  return data.books.filter((libro) => { return libro.ageRecommended === valorSeleccionado }) //funcion callback    
 
-  const traerPersonaje = data.characters.toLoWerCase();
-  for(let name of characters){
-    let name = characters.name.toLoWerCase();
-    if (name.indexOf(traerPersonaje) !== -1 ){
-      encontrar.innerHTML += `
-     <li>${traerPersonaje.name} - valor ${traerPersonaje.value}</li>
-     `
-    }
-  }
-  if(encontrar.innerHTML === ''){
-    encontrar.innerHTML += `
-     <li>${traerPersonaje.name} </li>
-     `
-  }
 }
 
 export const ordenar = (tipo) => {
@@ -42,7 +25,7 @@ export const ordenar = (tipo) => {
       if (nameA > nameB) {
         return 1;
       }
-      // names must be equal
+
       return 0;
     });
 
@@ -56,7 +39,7 @@ export const ordenar = (tipo) => {
       if (nameA > nameB) {
         return -1;
       }
-      // names must be equal
+
       return 0;
     });
 };
