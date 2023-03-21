@@ -1,15 +1,16 @@
-import { buscar, ordenar, filtrar } from "./dataHandler.js"
+import { buscar, ordenar, filtrar, buscarLibro } from "./dataHandler.js"
 
 //Elementos DOM en variable
 const btnBuscar = document.getElementById("btnBuscar")
 const booksContainer = document.getElementById("booksContainer")
 const sortTitle = document.getElementById("sortTitle")
 const filterSelect = document.getElementById("filterSelect")
-
+const buscarLibros = document.getElementById("buscarLibros")
 //Eventos del DOM
 btnBuscar.addEventListener('click', buscarInfo)
 sortTitle.addEventListener('change', ordenarPorTitulo)
 filterSelect.addEventListener('change', filtrarPorEdad)
+buscarLibros.addEventListener('change', buscarPorLibro)
 // btnFiltrar.addEventListener('click',)
 // btnOrdenar.addEventListener('click',)
 
@@ -46,49 +47,16 @@ function filtrarPorEdad(event) {
   }
 }
 
-function insertarPersonajes(BuscarPersonajes) {
-  charactersContainer.removeChild(document.getElementById("characters"))
-
-  const filtrar = document.createElement("div")
-  filtrar.setAttribute("id", "characters");
-  filtrar.setAttribute("class", "characters");
-  charactersContainer.appendChild(filtrar)
-
-  BuscarPersonajes.forEach(filtrar => {
-    const characteres = document.createElement("div")
-    characteres.setAttribute("id", "character" + filtrar.id)
-    filtrar.appendChild(characteres)
-
-    const name = document.createElement("label")
-    name.setAttribute("id", "characters" + filtrar.name.value);
-    name.setAttribute("class", "characters");
-    charactersContainer.appendChild(name)
-
-    const birth = document.createElement("label")
-    birth.setAttribute("id", "characters" + filtrar.birth.value);
-    birth.setAttribute("class", "characters");
-    charactersContainer.appendChild(birth)
-
-    const species = document.createElement("label")
-    species.setAttribute("id", "characters" + filtrar.species.value);
-    species.setAttribute("class", "characters");
-    charactersContainer.appendChild(species)
-
-    const gender = document.createElement("label")
-    gender.setAttribute("id", "characters" + filtrar.gender.value);
-    gender.setAttribute("class", "characters");
-    charactersContainer.appendChild(gender)
-
-    const house = document.createElement("label")
-    house.setAttribute("id", "characters" + filtrar.house.value);
-    house.setAttribute("class", "characters");
-    charactersContainer.appendChild(house)
-
-    const associated_groups = document.createElement("label")
-    associated_groups.setAttribute("id", "characters" + filtrar.associated_groups.value);
-    associated_groups.setAttribute("class", "characters");
-    charactersContainer.appendChild(associated_groups)
-  });
+function buscarPorLibro(event){
+  const libroSeleccionado = event.target.value; //asigno una const al event
+  if (libroSeleccionado === ""){    
+    const datoSeleccionados = buscar(); //la const va ser igul ala info
+    insertarLibros(datoSeleccionados) // se le asigna la info a la const
+    return
+  } else{
+    const resultado = buscarLibro(libroSeleccionado)//resultado guarda el retorno de la seleccion
+    insertarLibros(resultado) //resultado es donde alberga toda la data
+  }
 }
 
 function insertarLibros(librosAInsertar) {
