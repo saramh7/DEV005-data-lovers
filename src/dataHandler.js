@@ -1,11 +1,8 @@
 import data from './data/harrypotter/harry.js';
 
-
 export const buscar = () => {
   return data.books;
 };
-
-
 
 export const filtrar = (valorSeleccionado) => {
   return data.books.filter((libro) => { return libro.ageRecommended === valorSeleccionado }) //funcion callback    
@@ -47,3 +44,7 @@ export const ordenar = (tipo) => {
       return 0;
     });
 };
+
+export const estadistica = () => {
+
+}

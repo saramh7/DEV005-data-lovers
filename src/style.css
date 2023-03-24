@@ -4,12 +4,77 @@
   box-sizing: border-box;
 }
 
+h1 {
+  width: 100%;
+  max-width: 700px;
+  padding: 50px 50px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 body {
   color: #4a2b10;
   background-color: #fcf5e7;
 
   font-family: "Playfair Display", serif;
-  font-family: "Raleway", sans-serif;
+}
+
+/*******
+Load Section
+********/
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #ff3d00;
+  width: 6px;
+  height: 6px;
+  transform: translate(150%, 150%);
+  border-radius: 50%;
+}
+.loader::before {
+  left: auto;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  transform: translate(-150%, -150%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*******
+End Load Section
+********/
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fcf5e7;
+  z-index: 1;
 }
 
 .header-box {
@@ -28,25 +93,24 @@ body {
   justify-content: center;
 }
 
-.buscar,
 .filtrar,
 .ordenar,
-.regresar {
+.regresar,
+.grafico {
   padding: 5px 10px;
+}
+
+.btn-grafico {
+  text-align: center;
+  color: #4a2b10;
 }
 
 .contenedor {
 }
 
-.btn-buscar {
-  text-align: center;
-  color: #4a2b10;
-}
-
-
-.book-container {
-  display: grid;
-  grid-template-columns: 10% 80% 10%;
+.book-container,
+.chart-container {
+  padding: 250px 30px 30px;
 }
 
 .books {
@@ -90,9 +154,13 @@ body {
 
 .cover .book-title {
   font-size: 20px;
-  padding: 2px 16px;
+  padding: 10px 16px;
+  text-align: center;
 }
 
+.back-cover label {
+  padding: 5px 0;
+}
 .back-cover .book-description {
   text-align: justify;
 }
@@ -100,4 +168,22 @@ body {
 .character-image {
   width: 250px;
   padding: 30px;
+}
+
+.chart-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.chart {
+  width: 80%;
+}
+
+.div_hide {
+  display: none;
+}
+
+footer {
+  text-align: right;
 }
