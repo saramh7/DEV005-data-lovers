@@ -17,16 +17,15 @@
 <body>
   <header>
     <div class="header-box">
-      <img src="imagen/portada-logo.png" class="header-image">
+      <img src="imagen/portada-logo.png" style="max-width: 600px;" class="header-image">
     </div>
   </header>
   <main>
     <div class="contenedor">
       <nav class="nav">
         <div class="buscar">
-          <input type="text" id="inputBuscar" class="input-buscar"></input>
-          <input type="button" id="btnBuscar" class="btn-buscar" value="Buscar"></input>
-        </div>
+          <input type="button" id="btnBuscar" class="btn-buscar" value="Mostrar todo"></input>
+        
         <div class="filtrar">
           <label for="filterSelect">Filtrar por edad recomendada:</label>
           <select name="filterSelect" id="filterSelect">
@@ -36,6 +35,7 @@
             <option value="12+ years">12 años en adelante</option>
           </select>
         </div>
+        
         <div class="ordenar">
           <label for="sortTitle">Ordenar:</label>
           <select name="sortTitle" id="sortTitle">
@@ -44,8 +44,26 @@
             <option value="Z-A">Por título Descendente</option>
           </select>
         </div>
+        <div class="buscar">
+          <label for="buscarLibro">Buscar por libro:</label>
+          <select name="buscarLibro" id="buscarLibros">
+            <option value="">-Seleccione una opción</option>
+            <option value="Harry Potter and the Sorcerer's Stone">Harry Potter and the Sorcerer's Stone</option>
+            <option value="Harry Potter and the chamber of secrets">Harry Potter and the chamber of secrets</option>
+            <option value="Harry Potter and the Prisoner of Azkaban">Harry Potter and the Prisoner of Azkaban</option>
+            <option value="Harry Potter and the Goblet of Fire">Harry Potter and the Goblet of Fire</option>
+            <option value="Harry Potter and the Order of the Phoenix">Harry Potter and the Order of the Phoenix</option>
+            <option value="Harry Potter and the Half-Blood Prince">Harry Potter and the Half-Blood Prince</option>
+            <option value="Harry Potter and the Deathly Hallows">Harry Potter and the Deathly Hallows</option>
+            <option value="Harry Potter and the Cursed Child">Harry Potter and the Cursed Child</option>
+          </select>
+        </div>
+        <div class="regresar">
+          <input type="button" value="regresar" id="btnRegresar" onclick="document.location.reload()">
+        </div>
       </nav>
-
+    </div>
+    
       <div id="booksContainer" class="book-container">
         <div id="books" class="books">
           <div class="book-initial-load" id="bookInitialLoad">

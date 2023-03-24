@@ -11,6 +11,10 @@ export const filtrar = (valorSeleccionado) => {
   return data.books.filter((libro) => { return libro.ageRecommended === valorSeleccionado }) //funcion callback    
 
 }
+ 
+export const buscarLibro= (libroSeleccionado) => {
+  return data.books.filter((libro)=>{ return libro.title === libroSeleccionado})
+}
 
 export const ordenar = (tipo) => {
   const libros = data.books;

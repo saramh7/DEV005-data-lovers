@@ -4,17 +4,6 @@
   box-sizing: border-box;
 }
 
-h1 {
-  width: 100%;
-  max-width: 700px;
-  padding: 50px 50px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fcf5e1;
-}
-
 body {
   color: #4a2b10;
   background-color: #fcf5e7;
@@ -41,7 +30,8 @@ body {
 
 .buscar,
 .filtrar,
-.ordenar {
+.ordenar,
+.regresar {
   padding: 5px 10px;
 }
 
@@ -52,6 +42,7 @@ body {
   text-align: center;
   color: #4a2b10;
 }
+
 
 .book-container {
   display: grid;
