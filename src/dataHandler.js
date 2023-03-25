@@ -1,23 +1,19 @@
 import data from './data/harrypotter/harry.js';
 
-
 export const buscar = () => {
   return data.books;
 };
 
-
-
 export const filtrar = (valorSeleccionado) => {
   return data.books.filter((libro) => { return libro.ageRecommended === valorSeleccionado }) //funcion callback    
-
 }
- 
-export const buscarLibro= (libroSeleccionado) => {
-  return data.books.filter((libro)=>{ return libro.title === libroSeleccionado})
+
+export const buscarLibro = (libroSeleccionado) => {
+  return data.books.filter((libro) => { return libro.title === libroSeleccionado })
 }
 
 export const ordenar = (tipo) => {
-  const libros = data.books;
+  const libros = [...data.books];
 
   if (tipo === "a-z")
     return libros.sort((a, b) => {
