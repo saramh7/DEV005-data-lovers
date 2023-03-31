@@ -20,7 +20,7 @@ export const ordenar = (tipo) => {
       const nameA = a.title.toUpperCase();
       const nameB = b.title.toUpperCase();
       if (nameA < nameB) {
-        return -1;
+        return nameA.localeCompare(nameB)
       }
       if (nameA > nameB) {
         return 1;
@@ -30,11 +30,13 @@ export const ordenar = (tipo) => {
     });
 
   if (tipo === "z-a")
+
     return libros.sort((a, b) => {
       const nameA = a.title.toUpperCase();
       const nameB = b.title.toUpperCase();
       if (nameA < nameB) {
         return 1;
+
       }
       if (nameA > nameB) {
         return -1;
@@ -42,7 +44,7 @@ export const ordenar = (tipo) => {
 
       return 0;
     });
-};
+}
 
 export const obtenerVentas = () => {
   return data.books.reduce((acc, libro) => acc + libro.bookSold, 0)
