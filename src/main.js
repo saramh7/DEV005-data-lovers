@@ -150,7 +150,7 @@ function insertarGrafico(arrayLibros) {
 
   // Calcula el total de libros vendidos
   const sumaLibrosVendidos = ventas.reduce((acc, suma) => acc + suma, 0)
-
+  
   totalVentas.innerText = `La cantidad total de libros vendidos es: ${sumaLibrosVendidos.toLocaleString("es")} copias`;
 
   // eslint-disable-next-line no-undef
