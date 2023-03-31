@@ -28,9 +28,7 @@ export const ordenar = (tipo) => {
 
       return 0;
     });
-
-  if (tipo === "z-a")
-
+  else if (tipo === "z-a")
     return libros.sort((a, b) => {
       const nameA = a.title.toUpperCase();
       const nameB = b.title.toUpperCase();
@@ -44,6 +42,8 @@ export const ordenar = (tipo) => {
 
       return 0;
     });
+  else
+    return "error"
 }
 
 export const obtenerVentas = () => {
