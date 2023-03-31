@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./imagen/favicon.png">
+  <title>Libros de Harry Potter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="background.css" />
+  <script src="main.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-box">
+      <img src="imagen/portada-logo.png" class="header-image">
+    </div>
+
+    <div class="contenedor">
+      <div class="buscar">
+        <input type="button" id="btnBuscar" class="button" value="Mostrar todo" />
+        <input type="button" id="btnMostrarGrafico" class="button" value="Mostrar Gráfico" />
+        <input type="button" id="btnOcultarGrafico" class="button" value="Ocultar Gráfico" />
+      </div>
+      <nav class="nav">
+        <div class="filtros">
+          <select name="ordenarTitulo" id="ordenarTitulo" class="select">
+            <option value="">Ordenar libros</option>
+            <option value="A-Z">Por título de la A - Z</option>
+            <option value="Z-A">Por título de la Z - A</option>
+          </select>
+        </div>
+
+        <div class="filtros">
+          <select name="buscarLibro" id="buscarLibros" class="select">
+            <option value="">Buscar libro</option>
+            <option value="Harry Potter y la Piedra Filosofal">Harry Potter y la Piedra Filosofal</option>
+            <option value="Harry Potter y la Cámara Secreta">Harry Potter y la Cámara Secreta</option>
+            <option value="Harry Potter y el Prisionero de Azkaban">Harry Potter y el Prisionero de Azkaban</option>
+            <option value="Harry Potter y el Cáliz de Fuego">Harry Potter y el Cáliz de Fuego</option>
+            <option value="Harry Potter y la Orden del Fénix">Harry Potter y la Orden del Fénix</option>
+            <option value="Harry Potter y el Misterio del Príncipe">Harry Potter y el Misterio del Príncipe</option>
+            <option value="Harry Potter y las Reliquias de la Muerte">Harry Potter y las Reliquias de la Muerte
+            </option>
+            <option value="Harry Potter y el Legado Maldito">Harry Potter y el Legado Maldito</option>
+          </select>
+        </div>
+
+        <div class="filtros">
+          <select name="filtroEdad" id="filtroEdad" class="select">
+            <option value="">Edad recomendada</option>
+            <option value="7-9 years">7 a 9 años</option>
+            <option value="10-11 years">10 a 11 años</option>
+            <option value="12+ years">12 años en adelante</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bg-animation">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+  </div>
+
+  <main>
+    <div id="booksContainer" class="book-container">
+      <div id="books" class="books">
+        <div class="book-initial-load" id="bookInitialLoad">
+          <div><span class="loader"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="chartContainer" class="chart-container">
+      <div class="chart">
+        <canvas id="chart">
+        </canvas>
+        <p class="total-ventas" id="totalVentas"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Copyright 2023</p>
+  </footer>
+
+
+
+  <template id="templateBook">
+    <div class="book">
+      <div class="book-card">
+        <div class="cover">
+          <img src="imagen" class="book-image">
+        </div>
+        <div class="back-cover">
+          <h3 class="book-title"></h3>
+          <label class="book-release-day"></label>
+          <label class="book-author"></label>
+          <label class="book-age-recommended"></label>
+          <label class="book-description"></label>
+        </div>
+      </div>
+    </div>
+  </template>
+</body>
+
+</html>
