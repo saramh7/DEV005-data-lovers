@@ -1,85 +1,5 @@
-import { buscar, buscarLibro, filtrar, ordenar } from '../src/dataHandler';
+import { buscar, buscarLibro, filtrar, ordenar, obtenerVentas } from '../src/dataHandler';
 
-const filtre = [
-  {
-    "id": 1,
-    "image": "1-piedra-filosofal.jpg",
-    "title": "Harry Potter y la Piedra Filosofal",
-    "releaseDay": "June 26, 1997",
-    "releaseYear": 1997,
-    "ageRecommended": "7-9 years",
-    "bookSold": 120000000,
-
-  },
-  {
-    "id": 2,
-    "image": "2-camara-secreta.jpg",
-    "title": "Harry Potter y la Cámara Secreta",
-    "releaseDay": "July 2, 1998",
-    "releaseYear": 1998,
-    "ageRecommended": "7-9 years",
-    "bookSold": 100000000,
-
-  },
-  {
-    "id": 3,
-    "image": "3-prisionero-azkaban.jpg",
-    "title": "Harry Potter y el Prisionero de Azkaban",
-    "releaseDay": "July 8, 1999",
-    "releaseYear": 1999,
-    "ageRecommended": "7-9 years",
-    "bookSold": 70000000,
-
-  },
-  {
-    "id": 4,
-    "image": "4-caliz-fuego.jpg",
-    "title": "Harry Potter y el Cáliz de Fuego",
-    "releaseDay": "July 8, 2000",
-    "releaseYear": 2000,
-    "ageRecommended": "10-11 years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 5,
-    "image": "5-orden-fenix.jpeg",
-    "title": "Harry Potter y la Orden del Fénix",
-    "releaseDay": "June 21, 2003",
-    "releaseYear": 2003,
-    "ageRecommended": "10-11 years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 6,
-    "image": "6-misterio-del-principe.jpeg",
-    "title": "Harry Potter y el Misterio del Príncipe",
-    "releaseDay": "July 16, 2005",
-    "releaseYear": 2005,
-    "ageRecommended": "10-11 years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 7,
-    "image": "7-reliquias-muerte.jpg",
-    "title": "Harry Potter y las Reliquias de la Muerte",
-    "releaseDay": "July 21, 2007",
-    "releaseYear": 2007,
-    "ageRecommended": "12+ years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 8,
-    "image": "8-legado-maldito.jpeg",
-    "title": "Harry Potter y el Legado Maldito",
-    "releaseYear": 2016,
-    "ageRecommended": "12+ years",
-    "bookSold": 5400000,
-  }
-]
 const mockOrder = [
   {
     id: 4,
@@ -260,167 +180,69 @@ const mockOrderDes = [
     description: 'Hogwarts se prepara para el Torneo de los Tres Magos, en el que competirán tres escuelas de hechicería. Para sorpresa de todos, Harry Potter es elegido para participar en la competencia, en la que deberá luchar contra dragones, ingresar al agua y enfrentar sus mayores miedos.'
   }
 ]
-const elementosIguales = [
-  {
-    "id": 1,
-    "image": "1-piedra-filosofal.jpg",
-    "title": "Harry Potter y la Piedra Filosofal",
-  },
-  {
-    "id": 1,
-    "image": "1-piedra-filosofal.jpg",
-    "title": "Harry Potter y la Piedra Filosofal",
-  },
-  {
-    "id": 2,
-    "image": "2-camara-secreta.jpg",
-    "title": "Harry Potter y la Cámara Secreta",
-    "releaseDay": "July 2, 1998",
-    "releaseYear": 1998,
-    "ageRecommended": "7-9 years",
-    "bookSold": 100000000,
 
-  },
-  {
-    "id": 3,
-    "image": "3-prisionero-azkaban.jpg",
-    "title": "Harry Potter y el Prisionero de Azkaban",
-    "releaseDay": "July 8, 1999",
-    "releaseYear": 1999,
-    "ageRecommended": "7-9 years",
-    "bookSold": 70000000,
+describe("dataHandler", () => {
+  describe('buscar', () => {
+    it('debería retornar un array con la data completa de los libros de HP', () => {
+      const expected = buscar()
+      expect(typeof expected).toBe('object');
+      expect(expected.length).toBe(8);
+    });
 
-  },
-  {
-    "id": 4,
-    "image": "4-caliz-fuego.jpg",
-    "title": "Harry Potter y el Cáliz de Fuego",
-    "releaseDay": "July 8, 2000",
-    "releaseYear": 2000,
-    "ageRecommended": "10-11 years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 5,
-    "image": "5-orden-fenix.jpeg",
-    "title": "Harry Potter y la Orden del Fénix",
-    "releaseDay": "June 21, 2003",
-    "releaseYear": 2003,
-    "ageRecommended": "10-11 years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 6,
-    "image": "6-misterio-del-principe.jpeg",
-    "title": "Harry Potter y el Misterio del Príncipe",
-    "releaseDay": "July 16, 2005",
-    "releaseYear": 2005,
-    "ageRecommended": "10-11 years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 7,
-    "image": "7-reliquias-muerte.jpg",
-    "title": "Harry Potter y las Reliquias de la Muerte",
-    "releaseDay": "July 21, 2007",
-    "releaseYear": 2007,
-    "ageRecommended": "12+ years",
-    "bookSold": 65000000,
-
-  },
-  {
-    "id": 8,
-    "image": "8-legado-maldito.jpeg",
-    "title": "Harry Potter y el Legado Maldito",
-    "releaseYear": 2016,
-    "ageRecommended": "12+ years",
-    "bookSold": 5400000,
-  }
-]
-
-describe('buscar', () => {
-  it('debería retornar un array con la data completa de los libros de HP', () => {
-    const expected = buscar()
-    expect(typeof expected).toBe('object');
-    expect(expected.length).toBe(8);
+    it('debería validar que el array contenga todos sus propiedades', () => {
+      const expected = buscar()
+      expect(expected[0].title).toBeTruthy()
+      expect(expected[0].bookSold).toBeTruthy()
+      expect(typeof expected[0].bookSold).toBe('number');
+    });
   });
 
-  it('debería validar que el array contenga todos sus propiedades', () => {
-    const expected = buscar()
-    expect(filtre[0].title).toBeTruthy()
-    expect(expected[0].bookSold).toBeTruthy()
-    expect(typeof expected[0].bookSold).toBe('number');
+  describe('filtrar', () => {
+    it('debería validar que la función filtrar retorne un array', () => {
+      const expected = filtrar('10-11 years')
+      expect(typeof expected).toBe('object');
+      expect(expected.length).toBe(3);
+    })
+    it('debería retornar un array vacio para una edad recomendada que no existe', () => {
+      const expected = filtrar('1000 years')
+      expect(typeof expected).toBe('object');
+      expect(expected.length).toBe(0);
+    })
+  })
+
+  describe('buscarLibro', () => {
+    it('debería validar que la función buscarLibro retorne un array', () => {
+      const expected = buscarLibro('Harry Potter y las Reliquias de la Muerte')
+      expect(typeof expected).toBe('object');
+      expect(expected.length).toBe(1);
+    })
+    it('debería retornar un array vacío para un libro que no existe', () => {
+      const expected = buscarLibro('Harry Potter y mi abuelita')
+      expect(typeof expected).toBe('object');
+      expect(expected.length).toBe(0);
+    })
+  })
+
+  describe('ordenar', () => {
+    it('debería retornar libros ascendentes', () => {
+      const librosAscendentes = ordenar('a-z')
+      expect(librosAscendentes).toEqual(mockOrder);
+
+    });
+    it('debería retornar libros descendentes', () => {
+      const librosDescendentes = ordenar('z-a')
+      expect(librosDescendentes).toEqual(mockOrderDes)
+    })
+    it('debería retornar un error para tipo distinto de "a-z" o "z-a"', () => {
+      const librosDescendentes = ordenar("ascendente")
+      expect(librosDescendentes).toEqual("error")
+    })
   });
-});
-describe('buscarLibro', () => {
-  it('deberia retornar array con titulos de los libros HP', () => {
-    const libro = [
-      {
-        "id": 1,
-        "image": "1-piedra-filosofal.jpg",
-        "title": "Harry Potter y la Piedra Filosofal",
-        "releaseDay": "June 26, 1997",
-        "releaseYear": 1997,
-        "ageRecommended": "7-9 years",
-        "bookSold": 120000000,
-      }]
-    expect(buscarLibro(libro, ['title'])).toEqual([])
-  });
-  it('deberia retornar un array de los titulos del libro', () => {
-    expect(filtre[0].title).toBe('Harry Potter y la Piedra Filosofal');
-  });
+
+  describe('obtenerVentas', () => {
+    it('debería retornar un numero con el total de libros vendidos', () => {
+      const expected = obtenerVentas()
+      expect(typeof expected).toBe('number');
+    })
+  })
 })
-describe('filtrar', () => {
-  it('deberia retornar una array con los libros de eleccion en rango edad', () => {
-    expect(filtre[0].ageRecommended).toBe('7-9 years')
-  })
-  it('deberia retornar true con cualquier eleccion ', () => {
-    const edad = [
-      {
-        "id": 2,
-        "image": "2-camara-secreta.jpg",
-        "title": "Harry Potter y la Cámara Secreta",
-        "releaseDay": "July 2, 1998",
-        "releaseYear": 1998,
-        "ageRecommended": "7-9 years",
-        "bookSold": 100000000,
-      }]
-    expect(filtrar(filtre, edad['ageRecommend'])).toEqual([])
-  });
-})
-describe('ordenar', () => {
-  it('deberia retornar libroa ascendentes', () => {
-    const librosAscendentes = ordenar('a-z')
-    expect(librosAscendentes).toEqual(mockOrder);
-    //console.log(librosAscendentes)
-
-  });
-  it('deberia retornar libros descendentes', () => {
-    const librosDescendentes = ordenar('z-a')
-    //console.log(librosDescendentes)
-    expect(librosDescendentes).toEqual(mockOrderDes)
-
-  })
-  it('deberi retornar para 0 para elementos iguales', () => {
-
-    const mockIgual = ordenar[
-      {
-        id: 1,
-        image: '1-piedra-filosofal.jpg',
-        title: 'Harry Potter y la Piedra Filosofal'
-      },
-      {
-        id: 1,
-        image: '1-piedra-filosofal.jpg',
-        title: 'Harry Potter y la Piedra Filosofal'
-      }
-    ]
-    expect(ordenar(elementosIguales)).toEqual(mockIgual)
-    //console.log(elementosIguales)
-
-  })
-
-});
