@@ -15,12 +15,12 @@ export const buscarLibro = (libroSeleccionado) => {
 export const ordenar = (tipo) => {
   const libros = [...data.books];
 
-  if (tipo === "a-z")
+  if (tipo === "a-z") 
     return libros.sort((a, b) => {
       const nameA = a.title.toUpperCase();
       const nameB = b.title.toUpperCase();
       if (nameA < nameB) {
-        return -1;
+        return nameA.localeCompare(nameB)
       }
       if (nameA > nameB) {
         return 1;
@@ -30,11 +30,13 @@ export const ordenar = (tipo) => {
     });
 
   if (tipo === "z-a")
+  
     return libros.sort((a, b) => {
       const nameA = a.title.toUpperCase();
       const nameB = b.title.toUpperCase();
       if (nameA < nameB) {
         return 1;
+      
       }
       if (nameA > nameB) {
         return -1;
@@ -42,4 +44,5 @@ export const ordenar = (tipo) => {
 
       return 0;
     });
+    
 };
