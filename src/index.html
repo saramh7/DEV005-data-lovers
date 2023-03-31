@@ -31,28 +31,16 @@
       </div>
       <nav class="nav">
         <div class="filtros">
-          <label for="filtroEdad">Filtro edad recomendada:</label>
-          <select name="filtroEdad" id="filtroEdad">
-            <option value=""> - Seleccione una opción</option>
-            <option value="7-9 years">7 a 9 años</option>
-            <option value="10-11 years">10 a 11 años</option>
-            <option value="12+ years">12 años en adelante</option>
-          </select>
-        </div>
-
-        <div class="filtros">
-          <label for="ordenarTitulo">Ordenar Libros:</label>
-          <select name="ordenarTitulo" id="ordenarTitulo">
-            <option value=""> - Seleccione una opción</option>
+          <select name="ordenarTitulo" id="ordenarTitulo" class="select">
+            <option value="">Ordenar libros</option>
             <option value="A-Z">Por título de la A - Z</option>
             <option value="Z-A">Por título de la Z - A</option>
           </select>
         </div>
 
         <div class="filtros">
-          <label for="buscarLibro">Buscar libro:</label>
-          <select name="buscarLibro" id="buscarLibros">
-            <option value=""> - Seleccione una opción</option>
+          <select name="buscarLibro" id="buscarLibros" class="select">
+            <option value="">Buscar libro</option>
             <option value="Harry Potter y la Piedra Filosofal">Harry Potter y la Piedra Filosofal</option>
             <option value="Harry Potter y la Cámara Secreta">Harry Potter y la Cámara Secreta</option>
             <option value="Harry Potter y el Prisionero de Azkaban">Harry Potter y el Prisionero de Azkaban</option>
@@ -62,6 +50,15 @@
             <option value="Harry Potter y las Reliquias de la Muerte">Harry Potter y las Reliquias de la Muerte
             </option>
             <option value="Harry Potter y el Legado Maldito">Harry Potter y el Legado Maldito</option>
+          </select>
+        </div>
+
+        <div class="filtros">
+          <select name="filtroEdad" id="filtroEdad" class="select">
+            <option value="">Edad recomendada</option>
+            <option value="7-9 years">7 a 9 años</option>
+            <option value="10-11 years">10 a 11 años</option>
+            <option value="12+ years">12 años en adelante</option>
           </select>
         </div>
       </nav>

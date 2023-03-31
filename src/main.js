@@ -1,4 +1,4 @@
-import { buscar, ordenar, filtrar, buscarLibro } from "./dataHandler.js"
+import { buscar, ordenar, filtrar, buscarLibro, obtenerVentas } from "./dataHandler.js"
 
 // **** Elementos DOM en variable ****
 const booksContainer = document.getElementById("booksContainer")
@@ -149,7 +149,7 @@ function insertarGrafico(arrayLibros) {
   const ventas = arrayLibros.map(libro => libro.bookSold)
 
   // Calcula el total de libros vendidos
-  const sumaLibrosVendidos = ventas.reduce((acc, suma) => acc + suma, 0)
+  const sumaLibrosVendidos = obtenerVentas()
 
   totalVentas.innerText = `La cantidad total de libros vendidos es: ${sumaLibrosVendidos.toLocaleString("es")} copias`;
 

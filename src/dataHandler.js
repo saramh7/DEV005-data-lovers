@@ -43,3 +43,7 @@ export const ordenar = (tipo) => {
       return 0;
     });
 };
+
+export const obtenerVentas = () => {
+  return data.books.reduce((acc, libro) => acc + libro.bookSold, 0)
+}
