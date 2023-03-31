@@ -267,10 +267,79 @@ const elementosIguales = [
     "title": "Harry Potter y la Piedra Filosofal",
   },
   {
-    "id": 2,
+    "id": 1,
     "image": "1-piedra-filosofal.jpg",
     "title": "Harry Potter y la Piedra Filosofal",
-  },]
+  },
+  {
+    "id": 2,
+    "image": "2-camara-secreta.jpg",
+    "title": "Harry Potter y la Cámara Secreta",
+    "releaseDay": "July 2, 1998",
+    "releaseYear": 1998,
+    "ageRecommended": "7-9 years",
+    "bookSold": 100000000,
+
+  },
+  {
+    "id": 3,
+    "image": "3-prisionero-azkaban.jpg",
+    "title": "Harry Potter y el Prisionero de Azkaban",
+    "releaseDay": "July 8, 1999",
+    "releaseYear": 1999,
+    "ageRecommended": "7-9 years",
+    "bookSold": 70000000,
+
+  },
+  {
+    "id": 4,
+    "image": "4-caliz-fuego.jpg",
+    "title": "Harry Potter y el Cáliz de Fuego",
+    "releaseDay": "July 8, 2000",
+    "releaseYear": 2000,
+    "ageRecommended": "10-11 years",
+    "bookSold": 65000000,
+
+  },
+  {
+    "id": 5,
+    "image": "5-orden-fenix.jpeg",
+    "title": "Harry Potter y la Orden del Fénix",
+    "releaseDay": "June 21, 2003",
+    "releaseYear": 2003,
+    "ageRecommended": "10-11 years",
+    "bookSold": 65000000,
+
+  },
+  {
+    "id": 6,
+    "image": "6-misterio-del-principe.jpeg",
+    "title": "Harry Potter y el Misterio del Príncipe",
+    "releaseDay": "July 16, 2005",
+    "releaseYear": 2005,
+    "ageRecommended": "10-11 years",
+    "bookSold": 65000000,
+
+  },
+  {
+    "id": 7,
+    "image": "7-reliquias-muerte.jpg",
+    "title": "Harry Potter y las Reliquias de la Muerte",
+    "releaseDay": "July 21, 2007",
+    "releaseYear": 2007,
+    "ageRecommended": "12+ years",
+    "bookSold": 65000000,
+
+  },
+  {
+    "id": 8,
+    "image": "8-legado-maldito.jpeg",
+    "title": "Harry Potter y el Legado Maldito",
+    "releaseYear": 2016,
+    "ageRecommended": "12+ years",
+    "bookSold": 5400000,
+  }
+]
 
 describe('buscar', () => {
   it('debería retornar un array con la data completa de los libros de HP', () => {
@@ -344,7 +413,7 @@ describe('ordenar', () => {
         title: 'Harry Potter y la Piedra Filosofal'
       },
       {
-        id: 2,
+        id: 1,
         image: '1-piedra-filosofal.jpg',
         title: 'Harry Potter y la Piedra Filosofal'
       }
