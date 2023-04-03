@@ -6,17 +6,17 @@
 Esta pagina proporciona información para  aquellos que están comenzando su interacción con esta saga, para aquellos  
 que tuvieron su primer encuentro con las películas y ahora quieren ser mas exactos en la secuencia de 
 las historias como aquellos que solo por curiosidad quieren conocer los libros.
-La pagina proporciona información sobre los siguientes item : año de publicación, autor, descripción del libro, 
+  La pagina proporciona información sobre los siguientes items  : año de publicación, autor, descripción del libro, 
 número de ventas por libros y edad recomendada.
-Nuestra página permite interactuar con el usurario, el cual puede : buscar,  filtrar,  ordenar los libros y ademas ver el total de libros vendidos en la saga.
+  Nuestra página permite interactuar con el usurario, el cual puede : buscar,  filtrar,  ordenar los libros y ademas ver el total de libros vendidos en la saga.
 
 ### Definición del producto
 
-  En el proceso de diseño pensamos en  una pagina donde la información que se solicita ver 
+    En el proceso de diseño,  pensamos en  una pagina donde la información que se solicita ver 
   estuviera disponible al ingresar a ella, un menú que fuera accesible y fácil de visualizar para el usuario,
   con colores e imágenes relacionadas a la temática de la saga.
 
-  Nuestra pagina resuelve el problema que lo usuarios tienen al querer comenzar a leer esta saga, al ser 8 libros es facil confundirse y no tener claridad por donde comenzar, nuestra pagina muestra los libros con su descripcion respectiva , ademas para los padres, el filtro "edad recomendada" les da informacion sobre que libro es adecuado para sus hijos.
+  Nuestra pagina resuelve el problema que lo usuarios tienen al querer comenzar a leer esta saga, al ser 8 libros es fácil confundirse y no tener claridad por donde comenzar, nuestra pagina muestra los libros con su descripción respectiva , ademas para los padres, el filtro "edad recomendada" les da información sobre que libro es adecuado para sus hijos.
 
 
 ### Requisitos Solicitados
@@ -27,7 +27,7 @@ Nuestra página permite interactuar con el usurario, el cual puede : buscar,  fi
 
 Nuestra  implementación cumple con los siguientes requisitos:
 
-1. Mostrar la data en una interfaz por medio de puede  cards.
+1. Mostrar la data en una interfaz por medio de  cards.
 2. Permitir al usuario interactuar para obtener la información que necesita, por medio de los 
 3. botones, filtrar, ordenar, buscar y mostrar gráfico.
 4. Es _responsive_, se visualiza sin problemas desde distintos
@@ -37,30 +37,38 @@ Nuestra  implementación cumple con los siguientes requisitos:
 ### Pruebas unitarias
 
 Nuestra pruebas unitarias cumplen con la cobertura de 
+
 - 93% _statements_
 - 83% _branches_
 - 100% _functions_
 - 93% _lines_
+ 
+ Problemas detectados en los test :
 
-
+ - No se especifica la cantidad de libros existentes en la data
+ - No indica si las propiedades cambian al modificar la data.
+ - No indica error al ingresar parámetros no existentes en la funciones.
+- 
+  
 
 ## 9. Checklist
 
-* [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+* [x] Usa VanillaJS.
+* [x] Pasa linter (`npm run pretest`)
+* [x] Pasa tests (`npm test`)
+* [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+* [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [x] Incluye historias de usuario en `README.md`.
+* [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+* [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
+* [x] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+* [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [x] UI: Permite filtrar data en base a una condición.
+* [x] UI: Es _responsive_.
+
+Para acceder al proyecto desplegado [Haga clik aqui](https://saramh7.github.io/DEV005-data-lovers/)
